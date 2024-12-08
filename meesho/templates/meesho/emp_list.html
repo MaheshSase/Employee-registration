@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpList</title>
+</head>
+<body>
+    {% for  emp in  emps %}
+    <p>
+        {{ emp.emp_name }} - {{ emp.emp_code }} - {{ emp.emp_department }} {{emp.emp_status}}
+        <a href="{% url 'emp_update' emp.pk %}">Edit</a>
+        <a href="{% url 'emp_delete' emp.pk %}">Delete</a>
+    </p>
+    {% endfor %}
+    <a href="{%  url 'create_employee' %}">Create Employee</a>
+</body>
+</html>
